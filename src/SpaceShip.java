@@ -1,67 +1,51 @@
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
-public class SpaceShip {
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
+public class SpaceShip extends Sprite {
     private int dx;
     private int dy;
-    private int x = 40;
-    private int y = 60;
-    private int w;
-    private int h;
-    private Image image;
+    private List<Missile> missiles;
 
-    public SpaceShip() {
-        loadImage();
+    public SpaceShip(int x, int y) {
+        super(x, y);
+        initSpaceShip();
     }
-
-    private void loadImage() {
-        ImageIcon ii = new ImageIcon("/Developer/src/resources/download.png");
-        image = ii.getImage();
-        w = image.getWidth(null);
-        h = image.getHeight(null);
+    private void initSpaceShip() {
+        missiles = new ArrayList<>();
+        loadImage("/Users/davidfulton/Desktop/spaceship/src/resources/spacecraft.png");
+        getImageDimensions();
     }
-
     public void move() {
         x += dx;
-        y += dy;
-    }
+        y += dy; }
 
-    public int getX() {
-        return x;
+    public List<Missile> getMissiles() {
+        return missiles;
     }
-
-    public int getY() {
-        return y;
-    }
-
-    public int getWidth() {
-        return w;
-    }
-
-    public int getHeight() {
-        return h;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
     public void keyPressed(KeyEvent e) {
+
         int key = e.getKeyCode();
+        if (key == KeyEvent.VK_SPACE) {
+            fire();
+        }
         if (key == KeyEvent.VK_LEFT) {
-            dx = -2;
+            dx = -1;
         }
         if (key == KeyEvent.VK_RIGHT) {
-            dx = 2;
+            dx = 1;
         }
         if (key == KeyEvent.VK_UP) {
-            dy = -2;
+            dy = -1;
         }
         if (key == KeyEvent.VK_DOWN) {
-            dy = 2;
-        }
+            dy = 1;
+        } }
+    public void fire() {
+        missiles.add(new Missile(x + width, y + height / 2));
     }
-
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_LEFT) {
@@ -75,6 +59,5 @@ public class SpaceShip {
         }
         if (key == KeyEvent.VK_DOWN) {
             dy = 0;
-        }
-    }
+        } }
 }

@@ -1,21 +1,21 @@
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-public class MovingSpriteEx extends JFrame {
-    public MovingSpriteEx() {
+public class ShootingMissilesEx extends JFrame {
+    public ShootingMissilesEx() {
         initUI();
+
     }
     private void initUI() {
         add(new Board());
-        setTitle("Moving sprite");
         setSize(800, 600);
-        setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("Shooting missiles");
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            MovingSpriteEx ex = new MovingSpriteEx();
+            ShootingMissilesEx ex = new ShootingMissilesEx();
             ex.setVisible(true);
-        });
-    }
+        }); }
 }
