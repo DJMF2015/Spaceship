@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="spaceship:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/spaceship_jar</output-path>
+    <root id="archive" name="spaceship.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../stuff/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="spaceship" />
+    </root>
+  </artifact>
+</component>
