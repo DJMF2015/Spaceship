@@ -1,6 +1,6 @@
 public class Missile extends Sprite {
     private final int BOARD_WIDTH = 800;
-    private final int MISSILE_SPEED = 2;
+    private final int MISSILE_SPEED = 3;
 
     public Missile(int x, int y) {
         super(x, y);
@@ -8,7 +8,7 @@ public class Missile extends Sprite {
     }
 
     private void initMissile() {
-        loadImage("/Users/davidfulton/Desktop/spaceship/src/resources/missile.png");
+        loadImage("/home/david/Desktop/workspace/spaceship-master/src/resources/missile.png");
         getImageDimensions();
     }
 

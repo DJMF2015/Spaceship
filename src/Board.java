@@ -1,7 +1,7 @@
-import com.sun.javafx.tools.packager.Log;
-
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Color;
-import java.awt.*;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -11,7 +11,11 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class Board extends JPanel implements ActionListener {
-    private final int ICRAFT_X = 40;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final int ICRAFT_X = 40;
     private final int ICRAFT_Y = 60;
     private final int DELAY = 10;
     private Timer timer;
@@ -34,6 +38,7 @@ public class Board extends JPanel implements ActionListener {
         doDrawing(g);
         Toolkit.getDefaultToolkit().sync();
     }
+  //draw craft and available missiles
     private void doDrawing(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.drawImage(spaceShip.getImage(), spaceShip.getX(),
@@ -49,7 +54,8 @@ public class Board extends JPanel implements ActionListener {
         updateMissiles();
         updateSpaceShip();
         repaint(); }
-
+    
+    //parse all missiles from missiles List
     private void updateMissiles() {
 
         List<Missile> missiles = spaceShip.getMissiles();
