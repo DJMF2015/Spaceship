@@ -1,5 +1,7 @@
-import java.awt.Image;
+import java.awt.*;
 import javax.swing.ImageIcon;
+
+//code here can be reused throughout this package
 public class Sprite {
     protected int x;
     protected int y;
@@ -36,4 +38,11 @@ public class Sprite {
     }
     public void setVisible(Boolean visible) {
         this.visible = visible;
-    } }
+    }
+
+    //collison detection
+    public Rectangle getBounds(){ //code can be shared (sprite, alien,ship, missile...)
+        return new Rectangle(x,y, width, height);
+    }
+
+}

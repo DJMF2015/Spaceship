@@ -7,7 +7,7 @@ public class ShootingMissilesEx extends JFrame {
     }
     private void initUI() {
         add(new Board());
-        setSize(600, 450);
+        setSize(700, 550);
         setResizable(false);
         setTitle("Shooting missiles");
         setLocationRelativeTo(null);
